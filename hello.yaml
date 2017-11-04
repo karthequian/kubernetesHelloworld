@@ -16,14 +16,14 @@ spec:
       - name: helloworld
         image: karthequian/helloworld:latest
         ports:
-        - containerPort: 80
+        - containerPort: 80 #Endpoint is at port 80 in the container
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: hello-k8s-service
 spec:
-  type: NodePort
+  type: NodePort #Exposes the service as a node port
   ports:
   - port: 80
     protocol: TCP
